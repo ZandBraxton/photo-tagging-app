@@ -1,11 +1,11 @@
-
-
+import { ImgContain } from "./Components/imgContain"
+import './styles/app.css'
 const App = () => {
 
 
   return (
     <div>
-      hi
+      <ImgContain></ImgContain>
     </div>
   )
 }
