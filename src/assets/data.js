@@ -16,7 +16,14 @@ import xbox360 from './pierre-roussel-xbox360-web.jpg'
 export default {
 
 dreamcast: {
-    img: dreamcast
+    img: dreamcast,
+    zero: {
+        xmin: 715,
+        xmax: 792,
+        ymin: 580,
+        ymax: 657
+    }
+    
 },
 
 gamecube: {

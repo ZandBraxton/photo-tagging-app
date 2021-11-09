@@ -1,4 +1,9 @@
 .img-container {
     display: flex;
     justify-content: center;
+
+}
+
+.image:hover {
+    cursor: crosshair;
 }
