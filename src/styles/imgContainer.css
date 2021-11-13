@@ -5,6 +5,13 @@
 
 }
 
+.image {
+    height: 100%;
+    width: auto;
+    position: relative;
+    top: 10px
+}
+
 .image:hover {
     cursor: crosshair;
 }

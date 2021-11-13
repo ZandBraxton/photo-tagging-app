@@ -1,0 +1,17 @@
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    grid-template-rows: repeat(2);
+    grid-gap: 2em;
+    justify-content: center;
+    margin: 2em 0 2em 0;
+}
+
+.select-tag {
+    color:  #FBFAF5;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    margin-top: 0.4em;
+    text-shadow: 2px 2px black;
+}

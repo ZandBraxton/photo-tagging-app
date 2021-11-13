@@ -242,25 +242,25 @@ xbox: {
     id: "xbox",
     img: xbox,
     0: {
-        name: "Marth",
-        xmin: 502,
-        xmax: 568,
-        ymin: 1088,
-        ymax: 1164
+        name: "Ryu Hayabusa",
+        xmin: 908,
+        xmax: 937,
+        ymin: 642,
+        ymax: 698
     },
     1: {
-        name: "Toad",
-        xmin: 360,
-        xmax: 387,
-        ymin: 635,
-        ymax: 665
+        name: "Sam Fisher",
+        xmin: 464,
+        xmax: 493,
+        ymin: 778,
+        ymax: 824
     },
     2: {
-        name: "Mario",
-        xmin: 406,
-        xmax: 460,
-        ymin: 1099,
-        ymax: 1165
+        name: "Beat",
+        xmin: 772,
+        xmax: 893,
+        ymin: 1154,
+        ymax: 1211
     },
 },
 
@@ -269,25 +269,25 @@ xbox360: {
     id: "xbox360",
     img: xbox360,
     0: {
-        name: "Marth",
-        xmin: 502,
-        xmax: 568,
-        ymin: 1088,
-        ymax: 1164
+        name: "Frank West",
+        xmin: 764,
+        xmax: 789,
+        ymin: 1110,
+        ymax: 1153
     },
     1: {
-        name: "Toad",
-        xmin: 360,
-        xmax: 387,
-        ymin: 635,
-        ymax: 665
+        name: "Marcus Fenix",
+        xmin: 620,
+        xmax: 655,
+        ymin: 787,
+        ymax: 828
     },
     2: {
-        name: "Mario",
-        xmin: 406,
-        xmax: 460,
-        ymin: 1099,
-        ymax: 1165
+        name: "Master Chief",
+        xmin: 786,
+        xmax: 824,
+        ymin: 994,
+        ymax: 1043
     },
 },
 

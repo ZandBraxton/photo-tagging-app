@@ -16,7 +16,7 @@ export const ImgContain = () => {
         x: 0,
         y: 0
     })
-    const [board, setBoard] = useState(data.wii)
+    const [board, setBoard] = useState(data.ps4)
 console.log(board.name)
 
 const handleDropdownClick = (value) => {
@@ -35,15 +35,17 @@ const handleDropdownClick = (value) => {
 }
 
 const checkCoords = (e) => {
+        let domReact = e.target.getBoundingClientRect()
         let xOffset = e.target.offsetLeft
         let xCoords = e.pageX
         let yOffset = e.target.offsetTop
-        let yCoords = e.pageY
+        let yCoords = e.pageY - 64
         let x = xCoords - xOffset
         let y = yCoords - yOffset
         setPosition({xCoords, yCoords})
         setCoords({x, y})
         setDropdown(!dropdown)
+        console.log(domReact)
         console.log({xOffset})
         console.log({xCoords})
         console.log({yOffset})
@@ -56,11 +58,11 @@ const checkCoords = (e) => {
 
 return (
     <div className="img-container">
-        {/* {dropdown ? <Dropdown 
+        {dropdown ? <Dropdown 
            position={position}
            board={board}
            handleDropdownClick={handleDropdownClick}
-            ></Dropdown> : null} */}
+            ></Dropdown> : null}
         <img
             className="image"
             src={board.img}
