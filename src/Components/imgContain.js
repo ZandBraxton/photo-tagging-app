@@ -7,16 +7,25 @@ import { useDropdown } from '../Hooks/useDropdown'
 import { useEffect, useState } from 'react'
 import { firestore } from '../firebase/config'
 import { collection, doc, getDoc } from '@firebase/firestore'
+import { Rules } from './rules'
 
 
-export const ImgContain = ({board}) => {
-    const [dropdown, setDropdown] = useState(false)
-    const [position, setPosition] = useDropdown()
-    const [coords, setCoords] = useState({
-        x: 0,
-        y: 0
-    })
+export const ImgContain = ({
+    gameStart,
+    setGameStart,
+    board,
+    dropdown, 
+    setDropdown,
+    position, 
+    coords, 
+    checkCoords
+}) => {
+
 console.log(board.name)
+
+useEffect(() => {
+    window.scrollTo(0, 0)
+}, [gameStart])
 
 const handleDropdownClick = (value) => {
     const promise = getData();
@@ -33,43 +42,38 @@ const handleDropdownClick = (value) => {
     })
 }
 
-const checkCoords = (e) => {
-        let domReact = e.target.getBoundingClientRect()
-        let xOffset = e.target.offsetLeft
-        let xCoords = e.pageX
-        let yOffset = e.target.offsetTop
-        let yCoords = e.pageY - 64
-        let x = xCoords - xOffset
-        let y = yCoords - yOffset
-        setPosition({xCoords, yCoords})
-        setCoords({x, y})
-        setDropdown(!dropdown)
-        console.log(domReact)
-        console.log({xOffset})
-        console.log({xCoords})
-        console.log({yOffset})
-        console.log({yCoords})
-        console.log({x})
-        console.log({y})
 
-}
 
 
 return (
-    <div className="img-container">
-        {dropdown ? <Dropdown 
-           position={position}
-           board={board}
-           handleDropdownClick={handleDropdownClick}
-            ></Dropdown> : null}
-        <img
-            className="image"
-            src={board.img}
-            alt="img"
-            onClick={(e) => checkCoords(e)}
-        />
+    <div className="game-container">
+        {gameStart === false ? 
+        
+        <Rules
+        board={board}
+        gameStart={gameStart}
+        setGameStart={setGameStart}
+        ></Rules>
+        
+        :
+
+        <div className="img-container">
+            {dropdown ? <Dropdown 
+            position={position}
+            board={board}
+            handleDropdownClick={handleDropdownClick}
+                ></Dropdown> : null}
+            <img
+                className="image"
+                src={board.img}
+                alt="img"
+                onClick={(e) => checkCoords(e)}
+            />
+        </div>
+        
+        }
+       
     </div>
-    
 )
 
 

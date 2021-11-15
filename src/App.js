@@ -9,11 +9,30 @@ import { useGameStart } from "./Hooks/useGameStart"
 
 
 const App = () => {
-const [gameStart, setGameStart, board, setBoard] = useGameStart()
+const [
+  gameStart, 
+  setGameStart, 
+  board, 
+  setBoard,
+  gameEnd, 
+  setGameEnd,
+  startTime, 
+  setStartTime,
+  dropdown, 
+  setDropdown,
+  position, 
+  coords,  
+  checkCoords,
+  returnStart
+  ] = useGameStart()
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar 
+      board={board}
+      setBoard={setBoard}
+      returnStart={returnStart}
+      ></Navbar>
       {board === null ? 
        <StartPage
        boards={dataLocal}
@@ -21,6 +40,13 @@ const [gameStart, setGameStart, board, setBoard] = useGameStart()
        ></StartPage>
       : 
        <ImgContain
+       gameStart={gameStart}
+       setGameStart={setGameStart}
+       dropdown={dropdown}
+       setDropdown={setDropdown}
+       position={position}
+       coords={coords}
+       checkCoords={checkCoords}
        board={board}></ImgContain>
     }
     </div>

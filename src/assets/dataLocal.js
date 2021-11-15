@@ -9,6 +9,11 @@ import wii from './pierre-roussel-wii-web.jpg'
 import xbox from './pierre-roussel-xbox-web.jpg'
 import xbox360 from './pierre-roussel-xbox360-web.jpg'
 
+//characters
+
+import sonic from './Characters/20905-6-sonic-the-hedgehog-transparent.png'
+import afroThunder from './Characters/ddzbrer-dbe85566-b7f0-41cd-9061-772876e9a58d.png'
+import nightmare from './Characters/Nightmare_1.png'
 
 
 
@@ -23,12 +28,15 @@ export const dataLocal = [
     img: dreamcast,
     0: {
         name: "Sonic",
+        img: sonic
     },
     1: {
         name: "Afro Thunder",
+        img: afroThunder
     },
     2: {
         name: "Nightmare",
+        img: nightmare
     },
     
 },
