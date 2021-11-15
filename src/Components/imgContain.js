@@ -9,14 +9,13 @@ import { firestore } from '../firebase/config'
 import { collection, doc, getDoc } from '@firebase/firestore'
 
 
-export const ImgContain = () => {
+export const ImgContain = ({board}) => {
     const [dropdown, setDropdown] = useState(false)
     const [position, setPosition] = useDropdown()
     const [coords, setCoords] = useState({
         x: 0,
         y: 0
     })
-    const [board, setBoard] = useState(data.ps4)
 console.log(board.name)
 
 const handleDropdownClick = (value) => {

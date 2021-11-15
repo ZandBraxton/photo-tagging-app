@@ -14,11 +14,15 @@ const [gameStart, setGameStart, board, setBoard] = useGameStart()
   return (
     <div>
       <Navbar></Navbar>
-      <StartPage
+      {board === null ? 
+       <StartPage
        boards={dataLocal}
        setBoard={setBoard}
        ></StartPage>
-      {/* <ImgContain></ImgContain> */}
+      : 
+       <ImgContain
+       board={board}></ImgContain>
+    }
     </div>
   )
 }

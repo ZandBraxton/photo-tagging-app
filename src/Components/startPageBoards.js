@@ -1,8 +1,9 @@
 import '../styles/startPageBoard.css'
 
-export const StartPageBoard = ({board}) => {
+export const StartPageBoard = ({board, setBoard}) => {
     return(
-        <div className="board-item">
+        <div className="board-item"
+        onClick={() => setBoard(board)}>
             <img
             className="board-item-img"
             src={board.img}

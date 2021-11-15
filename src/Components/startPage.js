@@ -8,7 +8,7 @@ export const StartPage = ({boards, setBoard}) => {
         <StartPageBoard
             board={board} 
             key={board.id} 
-            onClick={() => setBoard(board)}
+            setBoard={setBoard}
         />
     ))
 
