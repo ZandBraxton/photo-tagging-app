@@ -28,15 +28,18 @@ export const dataLocal = [
     img: dreamcast,
     0: {
         name: "Sonic",
-        img: sonic
+        img: sonic,
+        found: false
     },
     1: {
         name: "Afro Thunder",
-        img: afroThunder
+        img: afroThunder,
+        found: false
     },
     2: {
         name: "Nightmare",
-        img: nightmare
+        img: nightmare,
+        found: false
     },
     
 },

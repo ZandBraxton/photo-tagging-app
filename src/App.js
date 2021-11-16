@@ -19,11 +19,11 @@ const [
   startTime, 
   setStartTime,
   dropdown, 
-  setDropdown,
   position, 
-  coords,  
+  found,
   checkCoords,
-  returnStart
+  returnStart,
+  handleDropdownClick
   ] = useGameStart()
 
   return (
@@ -43,10 +43,10 @@ const [
        gameStart={gameStart}
        setGameStart={setGameStart}
        dropdown={dropdown}
-       setDropdown={setDropdown}
        position={position}
-       coords={coords}
        checkCoords={checkCoords}
+       handleDropdownClick={handleDropdownClick}
+       found={found}
        board={board}></ImgContain>
     }
     </div>

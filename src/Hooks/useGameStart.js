@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react/cjs/react.development"
 import { useDropdown } from "./useDropdown"
+import { getData } from '../Hooks/useFirestore'
 
 export const useGameStart = () => {
     const [gameStart, setGameStart] = useState(false)
@@ -8,6 +9,11 @@ export const useGameStart = () => {
     const [startTime, setStartTime] = useState(Date.now)
     const [dropdown, setDropdown] = useState(false)
     const [position, setPosition] = useDropdown()
+    const [found, setFound] = useState({
+        0: false,
+        1: false,
+        2: false
+    })
     const [coords, setCoords] = useState({
         x: 0,
         y: 0
@@ -16,44 +22,69 @@ export const useGameStart = () => {
 
 
 
-    const checkCoords = (e) => {
-        let xOffset = e.target.offsetLeft
-        let xCoords = e.pageX
-        let yOffset = e.target.offsetTop
-        let yCoords = e.pageY - 64
-        let x = xCoords - xOffset
-        let y = yCoords - yOffset
-        setPosition({xCoords, yCoords})
-        setCoords({x, y})
-        setDropdown(!dropdown)
-        console.log({xOffset})
-        console.log({xCoords})
-        console.log({yOffset})
-        console.log({yCoords})
-        console.log({x})
-        console.log({y})
+const checkCoords = (e) => {
+    let xOffset = e.target.offsetLeft
+    let xCoords = e.pageX
+    let yOffset = e.target.offsetTop
+    let yCoords = e.pageY - 64
+    let x = xCoords - xOffset
+    let y = yCoords - yOffset
+    setPosition({xCoords, yCoords})
+    setCoords({x, y})
+    setDropdown(!dropdown)
+    console.log({xOffset})
+    console.log({xCoords})
+    console.log({yOffset})
+    console.log({yCoords})
+    console.log({x})
+    console.log({y})
+}
+
+const handleDropdownClick = (value) => {
+    const promise = getData();
+    promise.then((result) => {
+        let location = result[board.id][value]
+        console.log(location)
+        if (coords.x >= location.xmin && coords.x <= location.xmax && coords.y >= location.ymin && coords.y <= location.ymax) {
+            console.log(`Found ${location.name}`)
+            //found function
+            console.log(location)
+            setFound((prevState) => ({
+                ...prevState,
+                [value]: true
+            }))
+        }
+        setDropdown(false)
+    })
 }
 
 const returnStart = () => {
     setGameStart(false)
     setBoard(null)
+    setFound({
+        0: false,
+        1: false,
+        2: false
+    })
 }
 
     useEffect(() => {
         console.log(board)
         console.log(startTime)
-    }, [board, startTime])
+        console.log(found)
+    }, [board, found, startTime])
 
     return [
         gameStart, setGameStart, 
         board, setBoard,
         gameEnd, setGameEnd,
         startTime, setStartTime,
-        dropdown, setDropdown,
+        dropdown,
         position, 
-        coords,  
+        found,  
         checkCoords,
-        returnStart
+        returnStart,
+        handleDropdownClick
     ]
     
 }

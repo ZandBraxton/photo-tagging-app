@@ -1,13 +1,9 @@
 // import dreamcast from '../assets/pierre-roussel-dreamcast-web.jpg'
-import {data} from '../assets/data'
 import '../styles/imgContainer.css'
-import { getData } from '../Hooks/useFirestore'
 import { Dropdown } from './dropdown'
-import { useDropdown } from '../Hooks/useDropdown'
 import { useEffect, useState } from 'react'
-import { firestore } from '../firebase/config'
-import { collection, doc, getDoc } from '@firebase/firestore'
 import { Rules } from './rules'
+import {Check} from '@material-ui/icons'
 
 
 export const ImgContain = ({
@@ -15,33 +11,16 @@ export const ImgContain = ({
     setGameStart,
     board,
     dropdown, 
-    setDropdown,
     position, 
-    coords, 
-    checkCoords
+    found,
+    checkCoords,
+    handleDropdownClick
 }) => {
 
-console.log(board.name)
 
 useEffect(() => {
     window.scrollTo(0, 0)
 }, [gameStart])
-
-const handleDropdownClick = (value) => {
-    const promise = getData();
-    promise.then((result) => {
-        let location = result[board.id][value]
-        console.log(location)
-        if (coords.x >= location.xmin && coords.x <= location.xmax && coords.y >= location.ymin && coords.y <= location.ymax) {
-            console.log(`Found ${location.name}`)
-            //found function
-        } else {
-            console.log("Not found")
-        }
-        setDropdown(false)
-    })
-}
-
 
 
 
@@ -56,20 +35,63 @@ return (
         ></Rules>
         
         :
-
-        <div className="img-container">
-            {dropdown ? <Dropdown 
-            position={position}
-            board={board}
-            handleDropdownClick={handleDropdownClick}
-                ></Dropdown> : null}
-            <img
-                className="image"
-                src={board.img}
-                alt="img"
-                onClick={(e) => checkCoords(e)}
-            />
+        <div>
+            <div className="character-display-board">
+                <div className="character-container-board">
+                    <p>{board[0].name}</p>
+                    {found[0] === false ? 
+                    <img
+                    src={board[0].img}
+                    alt={board[0].name}
+                    /> : 
+                    <img
+                    style={{opacity: 1}}
+                    src={board[0].img}
+                    alt={board[0].name}
+                    />}
+                </div>
+                <div className="character-container-board">
+                    <p>{board[1].name}</p>
+                    {found[1] === false ? 
+                    <img
+                    src={board[1].img}
+                    alt={board[1].name}
+                    /> : 
+                    <img
+                    style={{opacity: 1}}
+                    src={board[1].img}
+                    alt={board[1].name}
+                    />}
+                </div>
+                <div className="character-container-board">
+                    <p>{board[2].name}</p>
+                    {found[2] === false ? 
+                    <img
+                    src={board[2].img}
+                    alt={board[2].name}
+                    /> : 
+                    <img
+                    style={{opacity: 1}}
+                    src={board[2].img}
+                    alt={board[2].name}
+                    />}
+                </div>
+            </div>
+            <div className="img-container">
+                {dropdown ? <Dropdown 
+                position={position}
+                board={board}
+                handleDropdownClick={handleDropdownClick}
+                    ></Dropdown> : null}
+                <img
+                    className="image"
+                    src={board.img}
+                    alt="img"
+                    onClick={(e) => checkCoords(e)}
+                />
+            </div>
         </div>
+       
         
         }
        
