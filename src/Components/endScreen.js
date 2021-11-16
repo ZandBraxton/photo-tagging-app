@@ -1,4 +1,7 @@
+import { addDoc, collection } from '@firebase/firestore'
 import { useEffect, useState } from 'react/cjs/react.development'
+import { firestore } from '../firebase/config'
+import { getLeaderboard } from '../Hooks/getLeaderboards'
 import '../styles/endscreen.css'
 
 export const EndScreen = ({finalTime, returnStart, board}) => {
@@ -10,7 +13,15 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
         setUsername(e.target.value)
     }
     
-    const saveToLeaderboard = () => {
+    const saveToLeaderboard = async () => {
+        try {
+            await addDoc(collection(firestore, 'leaderboards', 'T2ZZYxQ5FNOzpSFD2ZDz', 'users'), {
+                username: username,
+                score: `${finalTime}'s`
+            }) 
+        } catch(error) {
+            console.error('Error writing new message to Firebase Database', error);
+        }
         //data here
     }
 
@@ -36,7 +47,10 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
                      className="cancel"
                      onClick={() => returnStart()}
                      >Cancel</button>
-                    <button className="save">Save</button>
+                    <button 
+                    className="save"
+                    onClick={() => saveToLeaderboard()}
+                    >Save</button>
                 </div>
                 
             </div>
