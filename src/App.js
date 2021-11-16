@@ -46,7 +46,10 @@ const [
        position={position}
        checkCoords={checkCoords}
        handleDropdownClick={handleDropdownClick}
+       startTime={startTime}
+       gameEnd={gameEnd}
        found={found}
+       returnStart={returnStart}
        board={board}></ImgContain>
     }
     </div>

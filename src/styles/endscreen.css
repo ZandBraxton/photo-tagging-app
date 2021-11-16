@@ -1,0 +1,76 @@
+.endscreen-wrapper {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+}
+
+
+.endscreen-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(19, 19, 19);
+    color:  #FBFAF5;
+    margin: 10em auto 0 auto;
+    border: 4px solid;
+    border-color: rgb(18, 18, 18);
+    border-radius: 25px;
+    font-family: 'Oswald', sans-serif;
+    position: relative ;
+}
+
+.endscreen-container h1 {
+    font-size: 3rem;
+}
+
+.endscreen-container p {
+    margin: 0 auto 0.5em auto;
+    font-size: 2rem;
+}
+
+.username-input {
+    font-size: 2rem;
+    margin: 0.5em auto 1.5em auto;
+    width: 50%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 80%;
+}
+
+.button-container button {
+    font-family: 'Oswald', sans-serif;
+    color:  #FBFAF5;
+    font-size: 2rem;
+    width: 50%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.cancel {
+    background-color: #e01f28;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: #ad1921;
+}
+
+.save {
+    background-color: #41c936;
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color: #2f9628;
+}

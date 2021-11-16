@@ -30,6 +30,7 @@
 }
 .character-container {
     display: block;
+    text-align: center;
 }
 
 .character-container img {

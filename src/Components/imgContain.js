@@ -3,7 +3,7 @@ import '../styles/imgContainer.css'
 import { Dropdown } from './dropdown'
 import { useEffect, useState } from 'react'
 import { Rules } from './rules'
-import {Check} from '@material-ui/icons'
+import { EndScreen } from './endScreen'
 
 
 export const ImgContain = ({
@@ -13,16 +13,26 @@ export const ImgContain = ({
     dropdown, 
     position, 
     found,
+    gameEnd,
+    startTime,
     checkCoords,
+    returnStart,
     handleDropdownClick
 }) => {
+    const [finalTime, setFinalTime] = useState(null)
 
 
 useEffect(() => {
     window.scrollTo(0, 0)
 }, [gameStart])
 
-
+useEffect(() => {
+    if (gameEnd === true) {
+        const endTime = Date.now()
+        const finalTimeValue = (endTime - startTime) / 1000
+        setFinalTime(finalTimeValue)
+    }
+}, [gameEnd])
 
 return (
     <div className="game-container">
@@ -33,9 +43,17 @@ return (
         gameStart={gameStart}
         setGameStart={setGameStart}
         ></Rules>
-        
         :
         <div>
+            {gameEnd === false ? null : 
+            
+            <EndScreen
+            finalTime={finalTime}
+            returnStart={returnStart}
+            board={board}
+            >
+                
+            </EndScreen>}
             <div className="character-display-board">
                 <div className="character-container-board">
                     <p>{board[0].name}</p>
@@ -91,8 +109,6 @@ return (
                 />
             </div>
         </div>
-       
-        
         }
        
     </div>

@@ -6,7 +6,7 @@ export const useGameStart = () => {
     const [gameStart, setGameStart] = useState(false)
     const [board, setBoard] = useState(null)
     const [gameEnd, setGameEnd] = useState(false)
-    const [startTime, setStartTime] = useState(Date.now)
+    const [startTime, setStartTime] = useState(Date.now())
     const [dropdown, setDropdown] = useState(false)
     const [position, setPosition] = useDropdown()
     const [found, setFound] = useState({
@@ -58,6 +58,8 @@ const handleDropdownClick = (value) => {
     })
 }
 
+
+
 const returnStart = () => {
     setGameStart(false)
     setBoard(null)
@@ -66,12 +68,22 @@ const returnStart = () => {
         1: false,
         2: false
     })
+    setGameEnd(false)
 }
+    useEffect(() => {
+        if (gameStart === true) {
+            setStartTime(Date.now())
+        }
+    }, [gameStart])
+
 
     useEffect(() => {
-        console.log(board)
-        console.log(startTime)
-        console.log(found)
+        const checkForGameover = () => {
+            if (found[0] === true && found[1] === true && found[2] === true) {
+                setGameEnd(true)
+            }
+        }
+        checkForGameover()
     }, [board, found, startTime])
 
     return [
