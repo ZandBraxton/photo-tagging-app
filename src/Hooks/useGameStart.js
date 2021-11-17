@@ -3,6 +3,7 @@ import { useDropdown } from "./useDropdown"
 import { getData } from '../Hooks/useFirestore'
 
 export const useGameStart = () => {
+    const [viewLeaderboard, setViewLeaderboard] = useState(false)
     const [gameStart, setGameStart] = useState(false)
     const [board, setBoard] = useState(null)
     const [gameEnd, setGameEnd] = useState(false)
@@ -69,6 +70,7 @@ const returnStart = () => {
         2: false
     })
     setGameEnd(false)
+    setViewLeaderboard(false)
 }
     useEffect(() => {
         if (gameStart === true) {
@@ -87,6 +89,7 @@ const returnStart = () => {
     }, [board, found, startTime])
 
     return [
+        viewLeaderboard, setViewLeaderboard,
         gameStart, setGameStart, 
         board, setBoard,
         gameEnd, setGameEnd,

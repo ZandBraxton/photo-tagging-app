@@ -1,6 +1,6 @@
-import { addDoc, collection } from '@firebase/firestore'
+import { addDoc, collection, doc, setDoc } from '@firebase/firestore'
 import { useEffect, useState } from 'react/cjs/react.development'
-import { firestore } from '../firebase/config'
+import db from '../firebase/config'
 import { getLeaderboard } from '../Hooks/getLeaderboards'
 import '../styles/endscreen.css'
 
@@ -14,10 +14,10 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
     }
     
     const saveToLeaderboard = async () => {
-        try {
-            await addDoc(collection(firestore, 'leaderboards', 'T2ZZYxQ5FNOzpSFD2ZDz', 'users'), {
+        try {            
+            await addDoc(collection(db, 'leaderboards', `${board.name}`, 'users'), {
                 username: username,
-                score: `${finalTime}'s`
+                score: finalTime
             }) 
         } catch(error) {
             console.error('Error writing new message to Firebase Database', error);
@@ -25,8 +25,12 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
         //data here
     }
 
+ 
+
     useEffect(() => {
         console.log(username)
+        const promise = getLeaderboard()
+        console.log(promise)
     }, [username])
 
     return (

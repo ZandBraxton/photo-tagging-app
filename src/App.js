@@ -5,11 +5,17 @@ import { data } from "./assets/data"
 import { dataLocal } from "./assets/dataLocal"
 import './styles/app.css'
 import { useGameStart } from "./Hooks/useGameStart"
+import { useState } from "react/cjs/react.development"
+import { Leaderboard } from "./Components/leaderboard"
 
 
 
 const App = () => {
+
+
 const [
+  viewLeaderboard,
+  setViewLeaderboard,
   gameStart, 
   setGameStart, 
   board, 
@@ -26,34 +32,56 @@ const [
   handleDropdownClick
   ] = useGameStart()
 
-  return (
-    <div>
+
+  if (viewLeaderboard === true) {
+    return (
+      <div>
       <Navbar 
       board={board}
       setBoard={setBoard}
+      viewLeaderboard={viewLeaderboard}
+      setViewLeaderboard={setViewLeaderboard}
       returnStart={returnStart}
       ></Navbar>
-      {board === null ? 
-       <StartPage
-       boards={dataLocal}
-       setBoard={setBoard}
-       ></StartPage>
-      : 
-       <ImgContain
-       gameStart={gameStart}
-       setGameStart={setGameStart}
-       dropdown={dropdown}
-       position={position}
-       checkCoords={checkCoords}
-       handleDropdownClick={handleDropdownClick}
-       startTime={startTime}
-       gameEnd={gameEnd}
-       found={found}
-       returnStart={returnStart}
-       board={board}></ImgContain>
-    }
+      <Leaderboard></Leaderboard>
+    
     </div>
-  )
+    )
+  } else {
+    return (
+        <div>
+          <Navbar 
+          board={board}
+          setBoard={setBoard}
+          setViewLeaderboard={setViewLeaderboard}
+          returnStart={returnStart}
+          ></Navbar>
+          {board === null ? 
+          <StartPage
+          boards={dataLocal}
+          setBoard={setBoard}
+          ></StartPage>
+          : 
+          <ImgContain
+          gameStart={gameStart}
+          setGameStart={setGameStart}
+          dropdown={dropdown}
+          position={position}
+          checkCoords={checkCoords}
+          handleDropdownClick={handleDropdownClick}
+          startTime={startTime}
+          gameEnd={gameEnd}
+          found={found}
+          returnStart={returnStart}
+          board={board}></ImgContain>
+        }
+        </div>
+        )
+
+
+  }
+
+ 
 }
 
 export default App

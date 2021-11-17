@@ -21,3 +21,13 @@
 .logo {
     font-size: 3rem;
 }
+
+.view-leaderboard {
+    width: auto;
+    position: absolute;
+    right: 0;
+    margin-right: 3em;
+    height: 3em;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}

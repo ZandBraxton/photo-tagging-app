@@ -1,6 +1,6 @@
 
 import { doc, setDoc } from '@firebase/firestore'
-import { firestore } from '../firebase/config'
+import db from '../firebase/config'
 import dreamcast from './pierre-roussel-dreamcast-web.jpg'
 import gamecube from './pierre-roussel-gamecube-web-indigo.jpg'
 import n64 from './pierre-roussel-n64-web.jpg'
@@ -298,7 +298,7 @@ xbox360: {
 }
 
 async function setData() {
-    await setDoc(doc(firestore, "characters", "boards"), data)
+    await setDoc(doc(db, "characters", "boards"), data)
 }
 
 setData()
