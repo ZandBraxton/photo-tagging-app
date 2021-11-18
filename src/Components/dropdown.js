@@ -1,8 +1,6 @@
 import '../styles/dropdown.css'
 
 export const Dropdown = ({position, board, handleDropdownClick},) => {
-  console.log(position)
-
     return(
         <div className="dropdown" style={{top: position.yCoords, left: position.xCoords }}>
             <ul className="dropdown-ul">

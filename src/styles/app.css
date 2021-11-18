@@ -3,6 +3,21 @@ body {
     background-image: url(https://wallpaperaccess.com/full/1092758.jpg);
     background-size: cover;
     background-color: rgb(59, 59, 59);
+    min-height: 100vh;
+    max-height: 100%
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.transition-wrapper {
+	-webkit-transition: opacity 400ms 0ms ease-in;
+	-moz-transition: opacity 400ms 0ms ease-in;
+	-ms-transition: opacity 400ms 0ms ease-in;
+	-o-transition: opacity 400ms 0ms ease-in;
+	transition: opacity 400ms 0ms ease-in;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}

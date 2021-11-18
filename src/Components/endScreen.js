@@ -1,7 +1,6 @@
-import { addDoc, collection, doc, setDoc } from '@firebase/firestore'
-import { useEffect, useState } from 'react/cjs/react.development'
+import { addDoc, collection} from '@firebase/firestore'
+import { useState } from 'react/cjs/react.development'
 import db from '../firebase/config'
-import { getLeaderboard } from '../Hooks/getLeaderboards'
 import '../styles/endscreen.css'
 
 export const EndScreen = ({finalTime, returnStart, board}) => {
@@ -9,7 +8,6 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
 
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setUsername(e.target.value)
     }
     
@@ -17,21 +15,17 @@ export const EndScreen = ({finalTime, returnStart, board}) => {
         try {            
             await addDoc(collection(db, 'leaderboards', `${board.name}`, 'users'), {
                 username: username,
-                score: finalTime
+                score: parseFloat(finalTime)
             }) 
         } catch(error) {
             console.error('Error writing new message to Firebase Database', error);
         }
-        //data here
+        returnStart()
     }
 
  
 
-    useEffect(() => {
-        console.log(username)
-        const promise = getLeaderboard()
-        console.log(promise)
-    }, [username])
+
 
     return (
         <div className="endscreen-wrapper">

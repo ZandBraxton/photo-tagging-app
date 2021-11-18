@@ -1,4 +1,53 @@
 .leaderboard-container {
-    color: white;
+    color:  #FBFAF5;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
+}
+
+.current-leaderboard-title h1 {
+    font-size: 4rem;
+    text-align: center;
+    width: 20rem;
+}
+
+.current-leaderboard-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.scoreboard-container {
+    background-color: rgba(18, 18, 18, 0.76);
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(1, 10rem);
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 6em;
+}
+
+.scoreboard-labels, .scoreboard-info {
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 8em);
+    justify-content: center;
+    text-align: left;
+    gap: 5em;
+    
+   
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.scoreboard-labels h2 {
+    background-color: rgb(25, 37, 78);
+    border-bottom: 2px solid white;
+    margin-bottom: 1em;
+}
+
+.scoreboard-info p {
+    background-color: rgb(25, 37, 78);
 }

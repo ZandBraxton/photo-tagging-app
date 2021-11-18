@@ -1,5 +1,4 @@
-import { collection, doc, getDoc } from '@firebase/firestore'
-import React, { useState, useEffect } from 'react'
+import { doc, getDoc } from '@firebase/firestore'
 import db from '../firebase/config'
 
 export const getData = async () => {

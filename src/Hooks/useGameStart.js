@@ -33,23 +33,13 @@ const checkCoords = (e) => {
     setPosition({xCoords, yCoords})
     setCoords({x, y})
     setDropdown(!dropdown)
-    console.log({xOffset})
-    console.log({xCoords})
-    console.log({yOffset})
-    console.log({yCoords})
-    console.log({x})
-    console.log({y})
 }
 
 const handleDropdownClick = (value) => {
     const promise = getData();
     promise.then((result) => {
         let location = result[board.id][value]
-        console.log(location)
-        if (coords.x >= location.xmin && coords.x <= location.xmax && coords.y >= location.ymin && coords.y <= location.ymax) {
-            console.log(`Found ${location.name}`)
-            //found function
-            console.log(location)
+        if (coords.x >= location.xmin && coords.x <= location.xmax && coords.y >= location.ymin && coords.y <= location.ymax) {       
             setFound((prevState) => ({
                 ...prevState,
                 [value]: true
@@ -92,8 +82,8 @@ const returnStart = () => {
         viewLeaderboard, setViewLeaderboard,
         gameStart, setGameStart, 
         board, setBoard,
-        gameEnd, setGameEnd,
-        startTime, setStartTime,
+        gameEnd, 
+        startTime, 
         dropdown,
         position, 
         found,  

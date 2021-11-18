@@ -1,5 +1,4 @@
 import '../styles/rules.css'
-
 export const Rules = ({board, gameStart, setGameStart}) => {
 
 

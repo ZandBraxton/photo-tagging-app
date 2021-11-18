@@ -175,11 +175,11 @@ ps3: {
         ymax: 980
     },
     2: {
-        name: "Tomas Sevchenko",
-        xmin: 545,
-        xmax: 587,
-        ymin: 1209,
-        ymax: 1266
+        name: "Sackboy",
+        xmin: 598,
+        xmax: 621,
+        ymin: 731,
+        ymax: 770
     },
 },
 

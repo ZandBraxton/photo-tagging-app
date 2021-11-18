@@ -1,11 +1,9 @@
 import { Navbar } from "./Components/nav"
 import { StartPage } from "./Components/startPage"
-import { ImgContain } from "./Components/imgContain"
-import { data } from "./assets/data"
+import { GameBoard } from "./Components/gameBoard"
 import { dataLocal } from "./assets/dataLocal"
 import './styles/app.css'
 import { useGameStart } from "./Hooks/useGameStart"
-import { useState } from "react/cjs/react.development"
 import { Leaderboard } from "./Components/leaderboard"
 
 
@@ -21,9 +19,7 @@ const [
   board, 
   setBoard,
   gameEnd, 
-  setGameEnd,
   startTime, 
-  setStartTime,
   dropdown, 
   position, 
   found,
@@ -32,7 +28,7 @@ const [
   handleDropdownClick
   ] = useGameStart()
 
-
+//render leaderboard
   if (viewLeaderboard === true) {
     return (
       <div>
@@ -62,7 +58,7 @@ const [
           setBoard={setBoard}
           ></StartPage>
           : 
-          <ImgContain
+          <GameBoard
           gameStart={gameStart}
           setGameStart={setGameStart}
           dropdown={dropdown}
@@ -73,7 +69,7 @@ const [
           gameEnd={gameEnd}
           found={found}
           returnStart={returnStart}
-          board={board}></ImgContain>
+          board={board}></GameBoard>
         }
         </div>
         )
