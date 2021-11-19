@@ -1,7 +1,7 @@
 import { StartPageBoard } from './startPageBoards'
 import { Spinner } from './spinner'
 import '../styles/startpage.css'
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react'
 
 export const StartPage = ({boards, setBoard}) => {
     const [boardComponents, setBoardComponents] = useState(null)

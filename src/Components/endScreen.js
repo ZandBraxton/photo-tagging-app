@@ -1,5 +1,5 @@
 import { addDoc, collection} from '@firebase/firestore'
-import { useState } from 'react/cjs/react.development'
+import { useState } from 'react'
 import db from '../firebase/config'
 import '../styles/endscreen.css'
 

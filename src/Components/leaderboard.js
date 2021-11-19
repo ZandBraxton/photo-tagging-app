@@ -1,5 +1,5 @@
 import { collection, getDocs, limit, orderBy, query } from '@firebase/firestore'
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react'
 import db from '../firebase/config'
 import { ArrowLeft } from '@material-ui/icons'
 import { ArrowRight } from '@material-ui/icons'
