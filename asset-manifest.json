@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/photo-tagging-app/static/css/main.4a2f5608.chunk.css",
-    "main.js": "/photo-tagging-app/static/js/main.cf2ebfc6.chunk.js",
-    "main.js.map": "/photo-tagging-app/static/js/main.cf2ebfc6.chunk.js.map",
+    "main.js": "/photo-tagging-app/static/js/main.e2bbc8e2.chunk.js",
+    "main.js.map": "/photo-tagging-app/static/js/main.e2bbc8e2.chunk.js.map",
     "runtime-main.js": "/photo-tagging-app/static/js/runtime-main.0d25db9d.js",
     "runtime-main.js.map": "/photo-tagging-app/static/js/runtime-main.0d25db9d.js.map",
-    "static/js/2.64617351.chunk.js": "/photo-tagging-app/static/js/2.64617351.chunk.js",
-    "static/js/2.64617351.chunk.js.map": "/photo-tagging-app/static/js/2.64617351.chunk.js.map",
+    "static/js/2.9caa387f.chunk.js": "/photo-tagging-app/static/js/2.9caa387f.chunk.js",
+    "static/js/2.9caa387f.chunk.js.map": "/photo-tagging-app/static/js/2.9caa387f.chunk.js.map",
     "index.html": "/photo-tagging-app/index.html",
     "static/css/main.4a2f5608.chunk.css.map": "/photo-tagging-app/static/css/main.4a2f5608.chunk.css.map",
-    "static/js/2.64617351.chunk.js.LICENSE.txt": "/photo-tagging-app/static/js/2.64617351.chunk.js.LICENSE.txt",
+    "static/js/2.9caa387f.chunk.js.LICENSE.txt": "/photo-tagging-app/static/js/2.9caa387f.chunk.js.LICENSE.txt",
     "static/media/20905-6-sonic-the-hedgehog-transparent.05de8c11.png": "/photo-tagging-app/static/media/20905-6-sonic-the-hedgehog-transparent.05de8c11.png",
     "static/media/2b.3778d02d.png": "/photo-tagging-app/static/media/2b.3778d02d.png",
     "static/media/Ike.638b74d8.png": "/photo-tagging-app/static/media/Ike.638b74d8.png",
@@ -53,8 +53,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.0d25db9d.js",
-    "static/js/2.64617351.chunk.js",
+    "static/js/2.9caa387f.chunk.js",
     "static/css/main.4a2f5608.chunk.css",
-    "static/js/main.cf2ebfc6.chunk.js"
+    "static/js/main.e2bbc8e2.chunk.js"
   ]
 }
