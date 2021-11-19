@@ -1,10 +1,10 @@
-import { Navbar } from "./Components/nav"
-import { StartPage } from "./Components/startPage"
-import { GameBoard } from "./Components/gameBoard"
-import { dataLocal } from "./assets/dataLocal"
-import './styles/app.css'
-import { useGameStart } from "./Hooks/useGameStart"
-import { Leaderboard } from "./Components/leaderboard"
+import { Navbar } from "./Components/nav";
+import { StartPage } from "./Components/startPage";
+import { GameBoard } from "./Components/gameBoard";
+import { dataLocal } from "./assets/dataLocal";
+import './styles/app.css';
+import { useGameStart } from "./Hooks/useGameStart";
+import { Leaderboard } from "./Components/leaderboard";
 
 
 
@@ -26,7 +26,7 @@ const [
   checkCoords,
   returnStart,
   handleDropdownClick
-  ] = useGameStart()
+  ] = useGameStart();
 
 //render leaderboard
   if (viewLeaderboard === true) {
@@ -42,7 +42,7 @@ const [
       <Leaderboard></Leaderboard>
     
     </div>
-    )
+    );
   } else {
     return (
         <div>
@@ -72,12 +72,12 @@ const [
           board={board}></GameBoard>
         }
         </div>
-        )
+        );
 
 
-  }
+  };
 
  
-}
+};
 
-export default App
+export default App;

@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react/cjs/react.development"
+import { useEffect, useState } from "react"
 import { useDropdown } from "./useDropdown"
 import { getData } from '../Hooks/useFirestore'
 
 export const useGameStart = () => {
-    const [viewLeaderboard, setViewLeaderboard] = useState(false)
-    const [gameStart, setGameStart] = useState(false)
-    const [board, setBoard] = useState(null)
-    const [gameEnd, setGameEnd] = useState(false)
-    const [startTime, setStartTime] = useState(Date.now())
-    const [dropdown, setDropdown] = useState(false)
-    const [position, setPosition] = useDropdown()
+    const [viewLeaderboard, setViewLeaderboard] = useState(false);
+    const [gameStart, setGameStart] = useState(false);
+    const [board, setBoard] = useState(null);
+    const [gameEnd, setGameEnd] = useState(false);
+    const [startTime, setStartTime] = useState(Date.now());
+    const [dropdown, setDropdown] = useState(false);
+    const [position, setPosition] = useDropdown();
     const [found, setFound] = useState({
         0: false,
         1: false,
         2: false
-    })
+    });
     const [coords, setCoords] = useState({
         x: 0,
         y: 0
-    })
+    });
 
 
 
@@ -79,9 +79,12 @@ const returnStart = () => {
     }, [board, found, startTime])
 
     return [
-        viewLeaderboard, setViewLeaderboard,
-        gameStart, setGameStart, 
-        board, setBoard,
+        viewLeaderboard, 
+        setViewLeaderboard,
+        gameStart, 
+        setGameStart, 
+        board, 
+        setBoard,
         gameEnd, 
         startTime, 
         dropdown,
@@ -90,6 +93,6 @@ const returnStart = () => {
         checkCoords,
         returnStart,
         handleDropdownClick
-    ]
+    ];
     
-}
+};
